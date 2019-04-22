@@ -23,13 +23,13 @@ class baseController {
     this.tokenModel = yapi.getInst(tokenModel);
     this.projectModel = yapi.getInst(projectModel);
     let ignoreRouter = [
-      '/api/user/login_by_token',
-      '/api/user/login',
-      '/api/user/reg',
-      '/api/user/status',
-      '/api/user/logout',
-      '/api/user/avatar',
-      '/api/user/login_by_ldap'
+      '/yapi-api/api/user/login_by_token',
+      '/yapi-api/api/user/login',
+      '/yapi-api/api/user/reg',
+      '/yapi-api/api/user/status',
+      '/yapi-api/api/user/logout',
+      '/yapi-api/api/user/avatar',
+      '/yapi-api/api/user/login_by_ldap'
     ];
     if (ignoreRouter.indexOf(ctx.path) > -1) {
       this.$auth = true;
@@ -38,18 +38,18 @@ class baseController {
     }
 
     let openApiRouter = [
-      '/api/open/run_auto_test',
-			'/api/open/import_data',
-			'/api/interface/add',
-			'/api/interface/save',
-			'/api/interface/up',
-			'/api/interface/get',
-			'/api/interface/list',
-			'/api/interface/list_menu',
-			'/api/interface/add_cat',
-      '/api/interface/getCatMenu',
-      '/api/interface/list_cat',
-      '/api/project/get'
+      '/yapi-api/api/open/run_auto_test',
+			'/yapi-api/api/open/import_data',
+			'/yapi-api/api/interface/add',
+			'/yapi-api/api/interface/save',
+			'/yapi-api/api/interface/up',
+			'/yapi-api/api/interface/get',
+			'/yapi-api/api/interface/list',
+			'/yapi-api/api/interface/list_menu',
+			'/yapi-api/api/interface/add_cat',
+      '/yapi-api/api/interface/getCatMenu',
+      '/yapi-api/api/interface/list_cat',
+      '/yapi-api/api/project/get'
     ];
 
     let params = Object.assign({}, ctx.query, ctx.request.body);

@@ -198,7 +198,7 @@ class MemberList extends Component {
               <Link to={`/user/profile/${record.uid}`}>
                 <img
                   src={
-                    location.protocol + '//' + location.host + '/api/user/avatar?uid=' + record.uid
+                    location.protocol + '//' + location.host + '/yapi-api/api/user/avatar?uid=' + record.uid
                   }
                   className="m-user-img"
                 />

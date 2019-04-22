@@ -104,7 +104,7 @@ MenuUser.propTypes = {
 };
 
 const ToolUser = props => {
-  let imageUrl = props.imageUrl ? props.imageUrl : `/api/user/avatar?uid=${props.uid}`;
+  let imageUrl = props.imageUrl ? props.imageUrl : `/yapi-api/api/user/avatar?uid=${props.uid}`;
   return (
     <ul>
       <li className="toolbar-li item-search">
@@ -177,7 +177,7 @@ const ToolUser = props => {
             <span className="avatar-image">
               <img src={imageUrl} />
             </span>
-            {/*props.imageUrl? <Avatar src={props.imageUrl} />: <Avatar src={`/api/user/avatar?uid=${props.uid}`} />*/}
+            {/*props.imageUrl? <Avatar src={props.imageUrl} />: <Avatar src={`/yapi-api/api/user/avatar?uid=${props.uid}`} />*/}
             <span className="name">
               <Icon type="down" />
             </span>

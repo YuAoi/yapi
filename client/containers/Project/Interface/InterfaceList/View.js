@@ -392,7 +392,7 @@ class View extends Component {
             </Col>
             <Col span={8} className="colValue">
               <Link className="user-name" to={'/user/profile/' + uid}>
-                <img src={'/api/user/avatar?uid=' + uid} className="user-img" />
+                <img src={'/yapi-api/api/user/avatar?uid=' + uid} className="user-img" />
                 {username}
               </Link>
             </Col>

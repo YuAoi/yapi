@@ -80,7 +80,7 @@ class WikiPage extends Component {
       wsProtocol +
         '://' +
         domain +
-        '/api/ws_plugin/wiki_desc/solve_conflict?id=' +
+        '/yapi-api/api/ws_plugin/wiki_desc/solve_conflict?id=' +
         this.props.match.params.id
     );
     s.onopen = () => {

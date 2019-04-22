@@ -102,7 +102,7 @@ class InterfaceEdit extends Component {
         wsProtocol +
           '://' +
           domain +
-          '/api/interface/solve_conflict?id=' +
+          '/yapi-api/api/interface/solve_conflict?id=' +
           this.props.match.params.actionId
       );
       s.onopen = () => {
@@ -186,6 +186,8 @@ class InterfaceEdit extends Component {
 
   render() {
     const { cat, basepath, switch_notice, tag } = this.props.currProject;
+    const curdata = this.state.curdata || this.props.curdata;
+
     return (
       <div className="interface-edit">
         {this.state.status === 1 ? (
@@ -195,14 +197,14 @@ class InterfaceEdit extends Component {
             basepath={basepath}
             noticed={switch_notice}
             onSubmit={this.onSubmit}
-            curdata={this.state.curdata}
+            curdata={curdata}
             onTagClick={this.onTagClick}
           />
         ) : null}
         {this.state.status === 2 ? (
           <div style={{ textAlign: 'center', fontSize: '14px', paddingTop: '10px' }}>
-            <Link to={'/user/profile/' + this.state.curdata.uid}>
-              <b>{this.state.curdata.username}</b>
+            <Link to={'/user/profile/' + curdata.uid}>
+              <b>{curdata.username}</b>
             </Link>
             <span>正在编辑该接口，请稍后再试...</span>
           </div>

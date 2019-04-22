@@ -396,7 +396,7 @@ class Profile extends Component {
                 <AvatarUpload uid={userinfo.uid}>点击上传头像</AvatarUpload>
               ) : (
                 <div className="avatarImg">
-                  <img src={`/api/user/avatar?uid=${userinfo.uid}`} />
+                  <img src={`/yapi-api/api/user/avatar?uid=${userinfo.uid}`} />
                 </div>
               )}
             </Col>
@@ -502,7 +502,7 @@ class AvatarUpload extends Component {
   }
   render() {
     const { url } = this.props;
-    let imageUrl = url ? url : `/api/user/avatar?uid=${this.props.uid}`;
+    let imageUrl = url ? url : `/yapi-api/api/user/avatar?uid=${this.props.uid}`;
     // let imageUrl = this.state.imageUrl ? this.state.imageUrl : `/api/user/avatar?uid=${this.props.uid}`;
     // console.log(this.props.uid);
     return (
@@ -516,7 +516,7 @@ class AvatarUpload extends Component {
               className="avatar-uploader"
               name="basecode"
               showUploadList={false}
-              action="/api/user/upload_avatar"
+              action="/yapi-api/api/user/upload_avatar"
               beforeUpload={beforeUpload}
               onChange={this.handleChange.bind(this)}
             >
