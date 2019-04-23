@@ -1,3 +1,13 @@
+### v1.6.1
+* 修复服务端测试 bug
+
+### v1.6.0 （因该版本有严重 bug，已废弃）
+* 新增 swagger 文档自动更新功能
+
+### v1.5.11
+* 修复丢失了部分自动化测试错误提示
+* 优化 markdown 导出部分 bug
+
 ### v1.5.10
 * 解决 license should be a valid SPDX license expression 报错
 * 修改OpenAPI比较版本方法

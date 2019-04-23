@@ -193,7 +193,6 @@ class openController extends baseController {
     }
 
     let projectData = await this.projectModel.get(projectId);
-
     let caseList = await yapi.commons.getCaseList(id);
     if (caseList.errcode !== 0) {
       ctx.body = caseList;
@@ -307,7 +306,14 @@ class openController extends baseController {
       validRes: []
     };
     try {
-      let data = await crossRequest(options, interfaceData.pre_script, interfaceData.after_script);
+      let envObj = interfaceData.env.toObject();
+      let data = await crossRequest(options, interfaceData.pre_script, interfaceData.after_script, envObj, interfaceData.project_id, false);
+      //更新project的env
+      let upParams = {
+        up_time: yapi.commons.time(),
+        env: envObj
+      };
+      await this.projectModel.up(interfaceData.project_id, upParams);
       let res = data.res;
 
       result = Object.assign(result, {

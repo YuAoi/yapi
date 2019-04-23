@@ -85,6 +85,7 @@ class baseController {
       }
       let projectData = await this.projectModel.get(checkId);
       if (projectData) {
+        ctx.query.pid = checkId; // 兼容：/api/plugin/export
         ctx.params.project_id = checkId;
         this.$tokenAuth = true;
         this.$uid = tokenUid;
